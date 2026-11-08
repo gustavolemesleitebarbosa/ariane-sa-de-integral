@@ -101,8 +101,9 @@ function Index() {
             <a href={INSTA} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full p-1 hover:bg-secondary">
               <InstagramIcon className="h-8 w-8" />
             </a>
-            <a href={WHATS} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary py-1.5 pl-1.5 pr-4 text-sm font-semibold text-primary-foreground hover:opacity-90">
-              <WhatsAppIcon className="h-6 w-6" /> <span className="hidden sm:inline">Agendar</span>
+            <a href={WHATS} target="_blank" rel="noopener noreferrer" aria-label="Agendar pelo WhatsApp" className="inline-flex items-center gap-2 rounded-full bg-primary p-1.5 text-sm font-semibold text-primary-foreground hover:opacity-90 sm:pr-4">
+              <WhatsAppIcon className="h-7 w-7" />
+              <span className="hidden sm:inline">Agendar</span>
             </a>
           </div>
         </div>
