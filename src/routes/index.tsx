@@ -75,6 +75,7 @@ const servicos = [
   {
     icon: Heart,
     titulo: "Terapia Integrativa",
+    bg: "bg-secondary",
     itens: [
       { nome: "Psicoterapia", info: "Online ou presencial" },
       { nome: "Mapa Numerológico", info: "Pessoal ou empresarial · online ou presencial" },
@@ -83,6 +84,7 @@ const servicos = [
   {
     icon: Leaf,
     titulo: "Fisioterapia Integrativa",
+    bg: "bg-muted",
     itens: [
       { nome: "SmartMove Gestar", info: "Online e presencial" },
       { nome: "SmartMove Essencial", info: "Online para alguns casos ou presencial" },
@@ -96,6 +98,7 @@ const servicos = [
   {
     icon: BookOpen,
     titulo: "Educação",
+    bg: "bg-hero",
     itens: [
       { nome: "Mentoria em Numerologia" },
       { nome: "Mentoria em Identidade Integral" },
@@ -103,7 +106,7 @@ const servicos = [
       { nome: "Palestras e Treinamentos" },
     ],
   },
-] as { icon: typeof Heart; titulo: string; itens: { nome: string; info?: string }[] }[];
+] as { icon: typeof Heart; titulo: string; bg: string; itens: { nome: string; info?: string }[] }[];
 
 const cursos = [
   {
@@ -231,9 +234,9 @@ function Index() {
         <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
           Toque no serviço desejado para agendar direto pelo WhatsApp.
         </p>
-        <div className="mt-12 space-y-14">
+        <div className="mt-12 space-y-8">
           {servicos.map((g) => (
-            <div key={g.titulo}>
+            <div key={g.titulo} className={`rounded-[2rem] p-6 md:p-8 ${g.bg}`}>
               <div className="flex items-center gap-3">
                 <g.icon className="h-7 w-7 text-accent" />
                 <h3 className="text-3xl font-semibold text-deep">{g.titulo}</h3>
