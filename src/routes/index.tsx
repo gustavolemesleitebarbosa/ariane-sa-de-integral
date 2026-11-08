@@ -258,11 +258,6 @@ function Index() {
         © {new Date().getFullYear()} Ariane Conceição Evaristo · Prevenir · Cuidar · Integrar
       </footer>
 
-      {/* Botão flutuante WhatsApp */}
-      <a href={WHATS} target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"
-        className="fixed bottom-5 right-5 z-50 rounded-full shadow-soft transition hover:scale-110">
-        <WhatsAppIcon className="h-16 w-16" />
-      </a>
     </div>
   );
 }
