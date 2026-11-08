@@ -68,6 +68,43 @@ const frentes = [
   },
 ];
 
+const agendar = (servico: string) =>
+  "https://wa.me/5549999238040?text=" + encodeURIComponent(`Olá Aryane! Vim pelo site e gostaria de agendar: ${servico}.`);
+
+const servicos = [
+  {
+    icon: Heart,
+    titulo: "Terapia Integrativa",
+    itens: [
+      { nome: "Psicoterapia", info: "Online ou presencial" },
+      { nome: "Mapa Numerológico", info: "Pessoal ou empresarial · online ou presencial" },
+    ],
+  },
+  {
+    icon: Leaf,
+    titulo: "Fisioterapia Integrativa",
+    itens: [
+      { nome: "SmartMove Gestar", info: "Online e presencial" },
+      { nome: "SmartMove Essencial", info: "Online para alguns casos ou presencial" },
+      { nome: "Terapia Manual com pedras quentes", info: "Para alívio de dores" },
+      { nome: "Drenagem Linfática Manual", info: "Também atendimento pós-operatório" },
+      { nome: "Consulta Estratégica em Saúde Integral" },
+      { nome: "Homeopatia Integrativa" },
+      { nome: "Pacote Axis", info: "Desparasitação, desintoxicação e regeneração do corpo" },
+    ],
+  },
+  {
+    icon: BookOpen,
+    titulo: "Educação",
+    itens: [
+      { nome: "Mentoria em Numerologia" },
+      { nome: "Mentoria em Identidade Integral" },
+      { nome: "Contratação para cursos" },
+      { nome: "Palestras e Treinamentos" },
+    ],
+  },
+] as { icon: typeof Heart; titulo: string; itens: { nome: string; info?: string }[] }[];
+
 const cursos = [
   {
     nome: "Harmonia da Mente",
@@ -93,6 +130,7 @@ function Index() {
           <nav className="hidden gap-7 text-sm font-medium text-muted-foreground md:flex">
             <a href="#sobre" className="hover:text-primary">Sobre</a>
             <a href="#atuacao" className="hover:text-primary">Atuação</a>
+            <a href="#servicos" className="hover:text-primary">Agendar</a>
             <a href="#cursos" className="hover:text-primary">Cursos</a>
             <a href="#axis" className="hover:text-primary">Círculo AXIS</a>
             <a href="#contato" className="hover:text-primary">Contato</a>
@@ -183,6 +221,41 @@ function Index() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Serviços — cada card abre o WhatsApp para agendar */}
+      <section id="servicos" className="mx-auto max-w-6xl px-5 py-20">
+        <p className="text-center text-sm font-semibold uppercase tracking-[0.25em] text-accent">Atendimentos e serviços</p>
+        <h2 className="mt-3 text-center text-4xl font-semibold text-deep md:text-5xl">Agende seu atendimento</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+          Toque no serviço desejado para agendar direto pelo WhatsApp.
+        </p>
+        <div className="mt-12 space-y-14">
+          {servicos.map((g) => (
+            <div key={g.titulo}>
+              <div className="flex items-center gap-3">
+                <g.icon className="h-7 w-7 text-accent" />
+                <h3 className="text-3xl font-semibold text-deep">{g.titulo}</h3>
+              </div>
+              <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {g.itens.map((s) => (
+                  <a key={s.nome} href={agendar(s.nome)} target="_blank" rel="noopener noreferrer"
+                    aria-label={`Agendar ${s.nome} pelo WhatsApp`}
+                    className="group flex flex-col justify-between gap-5 rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-soft">
+                    <div>
+                      <h4 className="font-display text-2xl font-semibold leading-tight text-deep">{s.nome}</h4>
+                      {s.info && <p className="mt-2 text-sm text-muted-foreground">{s.info}</p>}
+                    </div>
+                    <span className="inline-flex w-fit items-center gap-2 rounded-full bg-primary p-1.5 pr-4 text-sm font-semibold text-primary-foreground transition group-hover:opacity-90">
+                      <WhatsAppIcon className="h-6 w-6" />
+                      Agende aqui
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
