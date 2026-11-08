@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Users, ArrowUpRight, Leaf, Heart, BookOpen } from "lucide-react";
 import { WhatsAppIcon, InstagramIcon } from "@/components/BrandIcons";
-import logo from "@/assets/logo_centro_renovar.svg.asset.json";
-import fotoConsultorio from "@/assets/ariane_consultorio.jpg.asset.json";
-import fotoMaca from "@/assets/ariane_maca.jpg.asset.json";
-import fotoRetrato from "@/assets/ariane_retrato.jpg.asset.json";
+// Imagens servidas de public/images para funcionar em qualquer hospedagem (Vercel, Lovable...)
+const logo = { url: "/images/logo_centro_renovar.svg" };
+const fotoConsultorio = { url: "/images/ariane_consultorio.jpg" };
+const fotoMaca = { url: "/images/ariane_maca.jpg" };
+const fotoRetrato = { url: "/images/ariane_retrato.jpg" };
 
 export const Route = createFileRoute("/")({
   head: () => ({
