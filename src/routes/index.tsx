@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Users, ArrowUpRight, Leaf, Heart, BookOpen } from "lucide-react";
 import { WhatsAppIcon, InstagramIcon } from "@/components/BrandIcons";
 // Imagens servidas de public/images para funcionar em qualquer hospedagem (Vercel, Lovable...)
-const logo = { url: "/images/logo_centro_renovar.svg" };
+const logo = { url: "/images/logo_simbolo.svg" };
 const fotoConsultorio = { url: "/images/ariane_consultorio.jpg" };
 const fotoMaca = { url: "/images/ariane_maca.jpg" };
 const fotoRetrato = { url: "/images/ariane_retrato.jpg" };
