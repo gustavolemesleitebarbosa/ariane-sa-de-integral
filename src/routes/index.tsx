@@ -56,7 +56,7 @@ const frentes = [
     titulo: "Terapia Integrativa",
     sub: "Frente emocional e existencial",
     texto: "Emoções, autoconhecimento e desenvolvimento humano.",
-    itens: ["Psicoterapia", "Numerologia"],
+    itens: ["Psicoterapia", "Numerologia (mapa numerológico pessoal e empresarial)"],
   },
   {
     letra: "C",
