@@ -250,8 +250,7 @@ function Index() {
                       <h4 className="font-display text-2xl font-semibold leading-tight text-deep">{s.nome}</h4>
                       {s.info && <p className="mt-2 text-sm text-muted-foreground">{s.info}</p>}
                     </div>
-                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-primary p-1.5 pr-4 text-sm font-semibold text-primary transition group-hover:bg-primary/5">
-                      <WhatsAppIcon className="h-6 w-6" />
+                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-primary px-4 py-1.5 text-sm font-semibold text-primary transition group-hover:bg-primary/5">
                       Agende aqui
                     </span>
                   </a>
