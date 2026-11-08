@@ -88,7 +88,7 @@ function Index() {
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <a href="#inicio" className="flex items-center gap-3">
-            <img src={logo.url} alt="Centro Renovar" className="h-10 w-auto" />
+            <img src={logo.url} alt="Centro Renovar" className="h-14 w-auto" />
           </a>
           <nav className="hidden gap-7 text-sm font-medium text-muted-foreground md:flex">
             <a href="#sobre" className="hover:text-primary">Sobre</a>
@@ -254,7 +254,7 @@ function Index() {
       </section>
 
       <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
-        <img src={logo.url} alt="Centro Renovar" className="mx-auto mb-3 h-12 w-auto" />
+        <img src={logo.url} alt="Centro Renovar" className="mx-auto mb-3 h-16 w-auto" />
         © {new Date().getFullYear()} Ariane Conceição Evaristo · Prevenir · Cuidar · Integrar
       </footer>
 
