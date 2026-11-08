@@ -10,13 +10,13 @@ const fotoRetrato = { url: "/images/ariane_retrato.jpg" };
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ariane Conceição Evaristo — Saúde Integral Consciente" },
+      { title: "Aryane Evaristo — Saúde Integral Consciente" },
       {
         name: "description",
         content:
-          "Fisioterapia integrativa, terapia integrativa e cursos de saúde integral com Ariane Conceição Evaristo. Prevenir, cuidar, integrar.",
+          "Fisioterapia integrativa, terapia integrativa e cursos de saúde integral com Aryane Evaristo. Prevenir, cuidar, integrar.",
       },
-      { property: "og:title", content: "Ariane Conceição Evaristo — Saúde Integral Consciente" },
+      { property: "og:title", content: "Aryane Evaristo — Saúde Integral Consciente" },
       { property: "og:description", content: "Corpo, movimento e existência. Cursos, atendimentos e o Círculo AXIS." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATS = "https://wa.me/5549999238040?text=" + encodeURIComponent("Olá Ariane! Vim pelo site e gostaria de mais informações.");
+const WHATS = "https://wa.me/5549999238040?text=" + encodeURIComponent("Olá Aryane! Vim pelo site e gostaria de mais informações.");
 const INSTA = "https://www.instagram.com/aryaneevaristho/";
 const EMAIL = "mailto:aryane.saudeintegral@gmail.com";
 const AXIS = "https://chat.whatsapp.com/Hy90Jr5yO8Q0BO6XNBg38Z?s=cl&p=a&iam=2";
@@ -115,7 +115,7 @@ function Index() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">Saúde Integral Consciente</p>
             <h1 className="mt-4 text-5xl font-semibold leading-[1.05] text-deep md:text-7xl">
-              Ariane Conceição <em className="text-primary">Evaristo</em>
+              Aryane <em className="text-primary">Evaristo</em>
             </h1>
             <p className="mt-5 max-w-md text-lg text-muted-foreground">
               Fisioterapeuta integrativa e terapeuta, Mestre em Ambiente e Saúde. Cuidado que integra corpo, movimento e existência.
@@ -133,7 +133,7 @@ function Index() {
           </div>
           <div className="relative">
             <div className="absolute -left-4 -top-4 h-full w-full rounded-[2rem] bg-brand opacity-30" />
-            <img src={fotoRetrato.url} alt="Ariane Conceição Evaristo sorrindo" className="relative aspect-[4/5] w-full rounded-[2rem] object-cover shadow-soft" />
+            <img src={fotoRetrato.url} alt="Aryane Evaristo sorrindo" className="relative aspect-[4/5] w-full rounded-[2rem] object-cover shadow-soft" />
           </div>
         </div>
       </section>
@@ -141,7 +141,7 @@ function Index() {
       {/* Pilares */}
       <section id="sobre" className="mx-auto max-w-6xl px-5 py-20">
         <div className="grid items-center gap-12 md:grid-cols-[1fr_1.2fr]">
-          <img src={fotoConsultorio.url} alt="Ariane em seu consultório" className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-soft" />
+          <img src={fotoConsultorio.url} alt="Aryane em seu consultório" className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-soft" />
           <div>
             <h2 className="text-4xl font-semibold text-deep md:text-5xl">Corpo · Movimento · Existência</h2>
             <p className="mt-4 text-muted-foreground">
@@ -189,7 +189,7 @@ function Index() {
       {/* Cursos */}
       <section id="cursos" className="mx-auto max-w-6xl px-5 py-20">
         <div className="grid items-center gap-12 md:grid-cols-[0.8fr_1.2fr]">
-          <img src={fotoMaca.url} alt="Ariane em sala de atendimento" className="aspect-[3/4] w-full rounded-[2rem] object-cover shadow-soft" />
+          <img src={fotoMaca.url} alt="Aryane em sala de atendimento" className="aspect-[3/4] w-full rounded-[2rem] object-cover shadow-soft" />
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">Cursos online</p>
             <h2 className="mt-3 text-4xl font-semibold text-deep md:text-5xl">Cuide de você, no seu ritmo</h2>
@@ -256,7 +256,7 @@ function Index() {
 
       <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
         <img src={logo.url} alt="Centro Renovar" className="mx-auto mb-3 h-16 w-auto" />
-        © {new Date().getFullYear()} Ariane Conceição Evaristo · Prevenir · Cuidar · Integrar
+        © {new Date().getFullYear()} Aryane Evaristo · Prevenir · Cuidar · Integrar
       </footer>
 
     </div>

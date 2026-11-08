@@ -81,10 +81,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ariane Conceição Evaristo — Saúde Integral" },
+      { title: "Aryane Evaristo — Saúde Integral" },
       { name: "description", content: "Fisioterapia integrativa, terapia integrativa e educação em saúde integral." },
-      { name: "author", content: "Ariane Conceição Evaristo" },
-      { property: "og:title", content: "Ariane Conceição Evaristo — Saúde Integral" },
+      { name: "author", content: "Aryane Evaristo" },
+      { property: "og:title", content: "Aryane Evaristo — Saúde Integral" },
       { property: "og:description", content: "Fisioterapia integrativa, terapia integrativa e educação em saúde integral." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
