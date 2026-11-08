@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Mail, MessageCircle, Users, ArrowUpRight, Leaf, Heart, BookOpen } from "lucide-react";
+import { Mail, Users, ArrowUpRight, Leaf, Heart, BookOpen } from "lucide-react";
+import { WhatsAppIcon, InstagramIcon } from "@/components/BrandIcons";
 import logo from "@/assets/logo_centro_renovar.svg.asset.json";
 import fotoConsultorio from "@/assets/ariane_consultorio.jpg.asset.json";
 import fotoMaca from "@/assets/ariane_maca.jpg.asset.json";
@@ -29,9 +30,9 @@ const EMAIL = "mailto:aryane.saudeintegral@gmail.com";
 const AXIS = "https://chat.whatsapp.com/Hy90Jr5yO8Q0BO6XNBg38Z?s=cl&p=a&iam=2";
 
 const contatos = [
-  { href: WHATS, icon: MessageCircle, label: "WhatsApp", value: "(49) 9.9923-8040" },
-  { href: INSTA, icon: Instagram, label: "Instagram", value: "@aryaneevaristho" },
-  { href: EMAIL, icon: Mail, label: "E-mail", value: "aryane.saudeintegral@gmail.com" },
+  { href: WHATS, icon: WhatsAppIcon, brand: true, label: "WhatsApp", value: "(49) 9.9923-8040" },
+  { href: INSTA, icon: InstagramIcon, brand: true, label: "Instagram", value: "@aryaneevaristho" },
+  { href: EMAIL, icon: Mail, brand: false, label: "E-mail", value: "aryane.saudeintegral@gmail.com" },
 ];
 
 const frentes = [
@@ -96,11 +97,11 @@ function Index() {
             <a href="#contato" className="hover:text-primary">Contato</a>
           </nav>
           <div className="flex items-center gap-2">
-            <a href={INSTA} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full p-2.5 text-primary hover:bg-secondary">
-              <Instagram className="h-5 w-5" />
+            <a href={INSTA} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full p-1 hover:bg-secondary">
+              <InstagramIcon className="h-8 w-8" />
             </a>
-            <a href={WHATS} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90">
-              <MessageCircle className="h-4 w-4" /> <span className="hidden sm:inline">Agendar</span>
+            <a href={WHATS} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary py-1.5 pl-1.5 pr-4 text-sm font-semibold text-primary-foreground hover:opacity-90">
+              <WhatsAppIcon className="h-6 w-6" /> <span className="hidden sm:inline">Agendar</span>
             </a>
           </div>
         </div>
@@ -122,7 +123,7 @@ function Index() {
               {contatos.map((c) => (
                 <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-soft transition hover:-translate-y-0.5 hover:border-primary">
-                  <c.icon className="h-5 w-5 shrink-0 text-primary" />
+                  <c.icon className={c.brand ? "h-8 w-8 shrink-0" : "h-8 w-8 shrink-0 text-primary"} />
                   <span className="text-sm font-semibold">{c.label}</span>
                 </a>
               ))}
@@ -243,7 +244,7 @@ function Index() {
           {contatos.map((c) => (
             <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer"
               className="flex flex-col items-center gap-3 rounded-3xl bg-secondary p-8 text-center transition hover:-translate-y-1 hover:shadow-soft">
-              <span className="rounded-full bg-primary p-4 text-primary-foreground"><c.icon className="h-6 w-6" /></span>
+              {c.brand ? <c.icon className="h-14 w-14" /> : <span className="rounded-full bg-primary p-4 text-primary-foreground"><c.icon className="h-6 w-6" /></span>}
               <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">{c.label}</span>
               <span className="break-all font-semibold text-deep">{c.value}</span>
             </a>
@@ -258,8 +259,8 @@ function Index() {
 
       {/* Botão flutuante WhatsApp */}
       <a href={WHATS} target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"
-        className="fixed bottom-5 right-5 z-50 rounded-full bg-accent p-4 text-accent-foreground shadow-soft transition hover:scale-110">
-        <MessageCircle className="h-7 w-7" />
+        className="fixed bottom-5 right-5 z-50 rounded-full shadow-soft transition hover:scale-110">
+        <WhatsAppIcon className="h-16 w-16" />
       </a>
     </div>
   );
