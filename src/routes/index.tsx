@@ -57,7 +57,7 @@ const frentes = [
     sub: "Frente emocional e existencial",
     texto: "Emoções, autoconhecimento e desenvolvimento humano.",
     itens: [
-      "Psicoterapia Integrativa com abordagem Existencial e Transpessoal (um processo de acolhimento e reflexão voltado à integração do ser e à construção de novos sentidos para a vida)",
+      "Psicoterapia Integrativa, com abordagem Existencial e Transpessoal, voltada ao autoconhecimento, à integração do ser e à construção de novos sentidos para a vida",
       "Numerologia Quântica (Pitagórica e Cabalística), em união com a Astrologia",
     ],
   },
