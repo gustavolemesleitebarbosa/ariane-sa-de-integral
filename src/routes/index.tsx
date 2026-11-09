@@ -56,7 +56,10 @@ const frentes = [
     titulo: "Terapia Integrativa",
     sub: "Frente emocional e existencial",
     texto: "Emoções, autoconhecimento e desenvolvimento humano.",
-    itens: ["Psicoterapia", "Numerologia (mapa numerológico pessoal e empresarial)"],
+    itens: [
+      "Psicoterapia Integrativa com abordagem Existencial e Transpessoal (um processo de acolhimento e reflexão voltado à integração do ser e à construção de novos sentidos para a vida)",
+      "Numerologia Quântica (Pitagórica e Cabalística), em união com a Astrologia",
+    ],
   },
   {
     letra: "C",
@@ -110,8 +113,14 @@ const servicos = [
     bg: "bg-hero",
     itens: [
       { nome: "Mentorias", sub: ["Mentoria em Numerologia Quântica", "Mentoria em Identidade Integral"] },
-      { nome: "Contratação para cursos" },
-      { nome: "Palestras e Treinamentos" },
+      {
+        nome: "Contratação para cursos",
+        info: "Aprendizado e aprofundamento em saúde integral, movimento consciente, ergonomia e práticas de autocuidado.",
+      },
+      {
+        nome: "Palestras e Treinamentos",
+        info: "Experiências e conhecimentos aplicados à promoção da saúde, ergonomia, bem-estar e desenvolvimento humano para grupos, empresas e instituições. Temas como Inteligência Emocional, entre outros.",
+      },
     ],
   },
 ] as { icon: typeof Heart; titulo: string; bg: string; itens: { nome: string; info?: string; sub?: string[] }[] }[];
