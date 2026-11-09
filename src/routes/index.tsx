@@ -391,7 +391,7 @@ function Index() {
       {/* Contato */}
       <section id="contato" className="mx-auto max-w-6xl px-5 py-20">
         <h2 className="text-center text-4xl font-semibold text-deep md:text-5xl">Vamos conversar?</h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {contatos.map((c) => (
             <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer"
               className="flex flex-col items-center gap-3 rounded-3xl bg-secondary p-8 text-center transition hover:-translate-y-1 hover:shadow-soft">
@@ -400,17 +400,14 @@ function Index() {
               <span className="break-all font-semibold text-deep">{c.value}</span>
             </a>
           ))}
+          <a href={MAPA} target="_blank" rel="noopener noreferrer"
+            className="flex flex-col items-center gap-3 rounded-3xl bg-secondary p-8 text-center transition hover:-translate-y-1 hover:shadow-soft">
+            <span className="rounded-full bg-primary p-4 text-primary-foreground"><MapPin className="h-6 w-6" /></span>
+            <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Endereço</span>
+            <span className="font-semibold text-deep">Kennedy Towers · Sala 605</span>
+            <span className="-mt-2 text-sm text-secondary-foreground">Campinas, São José/SC</span>
+          </a>
         </div>
-        <a href={MAPA} target="_blank" rel="noopener noreferrer"
-          className="mt-5 flex flex-col items-center gap-4 rounded-3xl bg-secondary p-8 text-center transition hover:-translate-y-1 hover:shadow-soft sm:flex-row sm:text-left">
-          <span className="rounded-full bg-primary p-4 text-primary-foreground"><MapPin className="h-6 w-6" /></span>
-          <span className="flex-1">
-            <span className="block text-sm font-semibold uppercase tracking-wider text-muted-foreground">Atendimento presencial</span>
-            <span className="mt-1 block font-semibold text-deep">Kennedy Towers · Av. Marechal Castelo Branco, 65</span>
-            <span className="block text-secondary-foreground">Espaço Sintonizar · Sala 605 · Torre A (Acesso 1) · Campinas, São José/SC</span>
-          </span>
-          <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">Ver no mapa <ArrowUpRight className="h-4 w-4" /></span>
-        </a>
       </section>
 
       <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
