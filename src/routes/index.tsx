@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, Users, ArrowUpRight, Leaf, Heart, BookOpen } from "lucide-react";
+import { Mail, Users, ArrowUpRight, Leaf, Heart, BookOpen, MapPin } from "lucide-react";
 import { WhatsAppIcon, InstagramIcon } from "@/components/BrandIcons";
 // Imagens servidas de public/images para funcionar em qualquer hospedagem (Vercel, Lovable...)
 const logo = { url: "/images/logo_simbolo.svg" };
@@ -28,6 +28,7 @@ export const Route = createFileRoute("/")({
 const WHATS = "https://wa.me/5549999238040?text=" + encodeURIComponent("Olá Aryane! Vim pelo site e gostaria de mais informações.");
 const INSTA = "https://www.instagram.com/aryaneevaristho/";
 const EMAIL = "mailto:aryane.saudeintegral@gmail.com";
+const MAPA = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Kennedy Towers, Av. Marechal Castelo Branco, 65, Campinas, São José - SC");
 const AXIS = "https://chat.whatsapp.com/Hy90Jr5yO8Q0BO6XNBg38Z?s=cl&p=a&iam=2";
 
 const contatos = [
@@ -351,6 +352,16 @@ function Index() {
             </a>
           ))}
         </div>
+        <a href={MAPA} target="_blank" rel="noopener noreferrer"
+          className="mt-5 flex flex-col items-center gap-4 rounded-3xl bg-secondary p-8 text-center transition hover:-translate-y-1 hover:shadow-soft sm:flex-row sm:text-left">
+          <span className="rounded-full bg-primary p-4 text-primary-foreground"><MapPin className="h-6 w-6" /></span>
+          <span className="flex-1">
+            <span className="block text-sm font-semibold uppercase tracking-wider text-muted-foreground">Atendimento presencial</span>
+            <span className="mt-1 block font-semibold text-deep">Kennedy Towers · Av. Marechal Castelo Branco, 65</span>
+            <span className="block text-secondary-foreground">Espaço Sintonizar · Sala 605 · Torre A (Acesso 1) · Campinas, São José/SC</span>
+          </span>
+          <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">Ver no mapa <ArrowUpRight className="h-4 w-4" /></span>
+        </a>
       </section>
 
       <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
