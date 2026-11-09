@@ -86,13 +86,22 @@ const servicos = [
     titulo: "Fisioterapia Integrativa",
     bg: "bg-muted",
     itens: [
-      { nome: "SmartMove Gestar", info: "Online e presencial" },
-      { nome: "SmartMove Essencial", info: "Online para alguns casos ou presencial" },
-      { nome: "Terapia Manual com pedras quentes", info: "Para alívio de dores" },
-      { nome: "Drenagem Linfática Manual", info: "Também atendimento pós-operatório" },
-      { nome: "Consulta Estratégica em Saúde Integral" },
-      { nome: "Homeopatia Integrativa" },
-      { nome: "Pacote Axis", info: "Desparasitação, desintoxicação e regeneração do corpo" },
+      {
+        nome: "SmartMove",
+        info: "De forma geral e específico para gestantes. Online ou presencial. Desenvolve consciência corporal, equilíbrio, força, flexibilidade e bem-estar físico e emocional.",
+      },
+      {
+        nome: "Terapia Manual",
+        sub: ["Terapia manual com pedras quentes (para alívio de dores)", "Drenagem Linfática (também atendimento pós-operatório)"],
+      },
+      {
+        nome: "Saúde Integral",
+        sub: [
+          "Consulta Estratégica em Saúde Integral",
+          "Homeopatia",
+          "Pacote Axis (desparasitação, desintoxicação e regeneração do corpo)",
+        ],
+      },
     ],
   },
   {
@@ -100,13 +109,12 @@ const servicos = [
     titulo: "Educação",
     bg: "bg-hero",
     itens: [
-      { nome: "Mentoria em Numerologia" },
-      { nome: "Mentoria em Identidade Integral" },
+      { nome: "Mentorias", sub: ["Mentoria em Numerologia Quântica", "Mentoria em Identidade Integral"] },
       { nome: "Contratação para cursos" },
       { nome: "Palestras e Treinamentos" },
     ],
   },
-] as { icon: typeof Heart; titulo: string; bg: string; itens: { nome: string; info?: string }[] }[];
+] as { icon: typeof Heart; titulo: string; bg: string; itens: { nome: string; info?: string; sub?: string[] }[] }[];
 
 const cursos = [
   {
@@ -249,6 +257,13 @@ function Index() {
                     <div>
                       <h4 className="font-display text-2xl font-semibold leading-tight text-deep">{s.nome}</h4>
                       {s.info && <p className="mt-2 text-sm text-muted-foreground">{s.info}</p>}
+                      {s.sub && (
+                        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                          {s.sub.map((i) => (
+                            <li key={i} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />{i}</li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                     <span className="inline-flex w-fit items-center gap-2 rounded-full border border-primary px-4 py-1.5 text-sm font-semibold text-primary transition group-hover:bg-primary/5">
                       Agende aqui
