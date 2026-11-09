@@ -226,7 +226,7 @@ function Index() {
               Fisioterapeuta integrativa e terapeuta, Mestre em Ambiente e Saúde. Cuidado que integra corpo, movimento e existência.
             </p>
             <p className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-              <MapPin className="h-4 w-4" /> Presencial em São José · Grande Florianópolis · e online
+              <MapPin className="h-4 w-4" /> Presencial em São José · Grande Florianópolis · e <strong className="font-extrabold">Online</strong>
             </p>
             <p className="mt-6 font-display text-2xl tracking-wide text-deep">Prevenir · Cuidar · Integrar</p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
@@ -299,7 +299,7 @@ function Index() {
         <p className="text-center text-sm font-semibold uppercase tracking-[0.25em] text-accent">Atendimentos e serviços</p>
         <h2 className="mt-3 text-center text-4xl font-semibold text-deep md:text-5xl">Agende seu atendimento</h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-          Atendimento presencial em São José (Grande Florianópolis) ou online, para qualquer lugar. Toque no serviço desejado para agendar direto pelo WhatsApp.
+          Atendimento presencial em São José (Grande Florianópolis) ou <strong className="font-bold text-deep">Online</strong>, para qualquer lugar. Toque no serviço desejado para agendar direto pelo WhatsApp.
         </p>
         <div className="mt-12 space-y-8">
           {servicos.map((g) => (
