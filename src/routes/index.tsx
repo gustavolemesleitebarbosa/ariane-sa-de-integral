@@ -10,17 +10,15 @@ const fotoRetrato = { url: "/images/ariane_retrato.jpg" };
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aryane Evaristo — Saúde Integral Consciente" },
-      {
-        name: "description",
-        content:
-          "Fisioterapia integrativa, terapia integrativa e cursos de saúde integral com Aryane Evaristo. Prevenir, cuidar, integrar.",
-      },
-      { property: "og:title", content: "Aryane Evaristo — Saúde Integral Consciente" },
-      { property: "og:description", content: "Corpo, movimento e existência. Cursos, atendimentos e o Círculo AXIS." },
+      { title: "Aryane Evaristo — Fisioterapia e Terapia Integrativa em Florianópolis, São José e online" },
+      { name: "description", content: DESCRICAO },
+      { property: "og:title", content: "Aryane Evaristo — Saúde Integral em Florianópolis, São José e online" },
+      { property: "og:description", content: DESCRICAO },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(dadosEstruturados()) }],
   }),
   component: Index,
 });
@@ -36,6 +34,54 @@ const contatos = [
   { href: INSTA, icon: InstagramIcon, brand: true, label: "Instagram", value: "@aryaneevaristho" },
   { href: EMAIL, icon: Mail, brand: false, label: "E-mail", value: "aryane.saudeintegral@gmail.com" },
 ];
+
+const DESCRICAO =
+  "Fisioterapia integrativa, psicoterapia, numerologia e educação em saúde integral com Aryane Evaristo. Atendimento presencial em São José (Grande Florianópolis) e online para todo o Brasil.";
+
+// Dados estruturados (schema.org) para o Google entender o negócio local, a região atendida e o atendimento online.
+function dadosEstruturados() {
+  const cidades = ["Florianópolis", "São José", "Palhoça", "Biguaçu"].map((name) => ({
+    "@type": "City",
+    name,
+    containedInPlace: { "@type": "State", name: "Santa Catarina" },
+  }));
+  return {
+    "@context": "https://schema.org",
+    "@type": "Physiotherapy",
+    name: "Aryane Evaristo — Saúde Integral Consciente",
+    description: DESCRICAO,
+    image: "/images/ariane_retrato.jpg",
+    logo: "/images/logo_simbolo.svg",
+    telephone: "+55 49 99923-8040",
+    email: "aryane.saudeintegral@gmail.com",
+    sameAs: [INSTA],
+    founder: { "@type": "Person", name: "Aryane Evaristo", jobTitle: "Fisioterapeuta integrativa e terapeuta" },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Av. Marechal Castelo Branco, 65 — Kennedy Towers, Torre A (Acesso 1), Sala 605 — Espaço Sintonizar, Campinas",
+      addressLocality: "São José",
+      addressRegion: "SC",
+      addressCountry: "BR",
+    },
+    areaServed: [...cidades, { "@type": "Country", name: "Brasil" }],
+    availableChannel: [
+      { "@type": "ServiceChannel", name: "Atendimento presencial", serviceLocation: { "@type": "Place", name: "Kennedy Towers, São José - SC" } },
+      { "@type": "ServiceChannel", name: "Atendimento online", serviceUrl: WHATS },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Serviços",
+      itemListElement: servicos.map((g) => ({
+        "@type": "OfferCatalog",
+        name: g.titulo,
+        itemListElement: g.itens.flatMap((i) => (i.sub ?? [i.nome])).map((name) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name, areaServed: "Florianópolis e região (presencial) e online" },
+        })),
+      })),
+    },
+  };
+}
 
 const frentes = [
   {
@@ -179,6 +225,9 @@ function Index() {
             <p className="mt-5 max-w-md text-lg text-muted-foreground">
               Fisioterapeuta integrativa e terapeuta, Mestre em Ambiente e Saúde. Cuidado que integra corpo, movimento e existência.
             </p>
+            <p className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+              <MapPin className="h-4 w-4" /> Presencial em São José · Grande Florianópolis · e online
+            </p>
             <p className="mt-6 font-display text-2xl tracking-wide text-deep">Prevenir · Cuidar · Integrar</p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {contatos.map((c) => (
@@ -250,7 +299,7 @@ function Index() {
         <p className="text-center text-sm font-semibold uppercase tracking-[0.25em] text-accent">Atendimentos e serviços</p>
         <h2 className="mt-3 text-center text-4xl font-semibold text-deep md:text-5xl">Agende seu atendimento</h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-          Toque no serviço desejado para agendar direto pelo WhatsApp.
+          Atendimento presencial em São José (Grande Florianópolis) ou online, para qualquer lugar. Toque no serviço desejado para agendar direto pelo WhatsApp.
         </p>
         <div className="mt-12 space-y-8">
           {servicos.map((g) => (
