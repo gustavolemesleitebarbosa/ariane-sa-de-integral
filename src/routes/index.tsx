@@ -236,7 +236,7 @@ function Index() {
       </section>
 
       {/* Serviços — cada card abre o WhatsApp para agendar */}
-      <section id="servicos" className="mx-auto max-w-6xl px-5 py-20">
+      <section id="servicos" className="mx-auto max-w-6xl px-5 pt-20 pb-10">
         <p className="text-center text-sm font-semibold uppercase tracking-[0.25em] text-accent">Atendimentos e serviços</p>
         <h2 className="mt-3 text-center text-4xl font-semibold text-deep md:text-5xl">Agende seu atendimento</h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
@@ -277,7 +277,7 @@ function Index() {
       </section>
 
       {/* Cursos */}
-      <section id="cursos" className="mx-auto max-w-6xl px-5 py-20">
+      <section id="cursos" className="mx-auto max-w-6xl px-5 pt-10 pb-20">
         <div className="grid items-center gap-12 md:grid-cols-[0.8fr_1.2fr]">
           <img src={fotoMaca.url} alt="Aryane em sala de atendimento" className="aspect-[3/4] w-full rounded-[2rem] object-cover shadow-soft" />
           <div>
