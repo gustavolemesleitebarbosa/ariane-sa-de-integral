@@ -16,8 +16,12 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESCRICAO },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
+      { property: "og:url", content: SITE + "/" },
+      { property: "og:image", content: SITE + "/images/ariane_retrato.jpg" },
+      { name: "google-site-verification", content: "3xEmRTlDcRweU9EXmiWY0CtG3aFuMLXyFoRBPKialoI" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: SITE + "/" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(dadosEstruturados()) }],
   }),
   component: Index,
@@ -35,6 +39,8 @@ const contatos = [
   { href: EMAIL, icon: Mail, brand: false, label: "E-mail", value: "aryane.saudeintegral@gmail.com" },
 ];
 
+const SITE = "https://aryane-saude-integral.vercel.app";
+
 const DESCRICAO =
   "Fisioterapia integrativa, psicoterapia, numerologia e educação em saúde integral com Aryane Evaristo. Atendimento presencial em São José (Grande Florianópolis) e online para todo o Brasil.";
 
@@ -50,8 +56,9 @@ function dadosEstruturados() {
     "@type": "Physiotherapy",
     name: "Aryane Evaristo — Saúde Integral Consciente",
     description: DESCRICAO,
-    image: "/images/ariane_retrato.jpg",
-    logo: "/images/logo_simbolo.svg",
+    url: SITE + "/",
+    image: SITE + "/images/ariane_retrato.jpg",
+    logo: SITE + "/images/logo_simbolo.svg",
     telephone: "+55 49 99923-8040",
     email: "aryane.saudeintegral@gmail.com",
     sameAs: [INSTA],

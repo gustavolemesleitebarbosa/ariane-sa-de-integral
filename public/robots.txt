@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://aryane-saude-integral.vercel.app/sitemap.xml
