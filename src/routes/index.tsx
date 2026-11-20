@@ -70,7 +70,8 @@ function dadosEstruturados() {
   return {
     "@context": "https://schema.org",
     "@type": "Physiotherapy",
-    name: "Aryane Evaristo — Saúde Integral Consciente",
+    name: "Aryane Evaristo",
+    alternateName: "Aryane Evaristo — Saúde Integral Consciente",
     description: DESCRICAO,
     url: SITE + "/",
     image: SITE + "/images/ariane_retrato.jpg",
